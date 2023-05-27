@@ -1,4 +1,4 @@
-This is a project for movies webstie to show detailes and search them , And built with Next.js/13, Tailwindcss, Swiper.js .
+This is a project for movie websties to show detailes and search them , And built with Next.js/13, Tailwindcss, Swiper.js .
 
 
 ## Project setup
