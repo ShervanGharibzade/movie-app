@@ -14,7 +14,7 @@ export async function generateStaticParams() {
 }
 
 export default async function page({params:{id}}) {
-    let userId = id.replace(".txt","")
+    let userId = id.toString();
     const movieDetails = await getMovie(userId)
   return (
     <div className='py-4'>
