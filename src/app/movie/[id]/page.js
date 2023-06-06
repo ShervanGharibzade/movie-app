@@ -10,6 +10,7 @@ export async function generateStaticParams() {
     return movies?.results?.map(mov => ({
         userId: mov?.id
     }))
+    
 }
 
 export default async function page({params:{id}}) {

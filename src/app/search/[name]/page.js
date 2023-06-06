@@ -1,9 +1,10 @@
 import Link from "next/link";
 import searchMovie from "../../../../lib/searchMovie";
+import MovieTarget from "./components/MovieTarget";
 
 export default async function page({params:{name}}) {
 
-    const path = "https://image.tmdb.org/t/p/original"
+  const path = "https://image.tmdb.org/t/p/original"
     const movieName = name.trim().replace(" ","%20");
     const movie = await searchMovie(movieName);
     let content;
@@ -41,6 +42,7 @@ export default async function page({params:{name}}) {
           </h2>
         </div>
         <div className="grid text-center gap-10 min-h-[83.5vh] grid-cols-4 w-fit mx-auto">
+          {/* <MovieTarget movie={movie}/> */}
           {content}
         </div>
       </div>

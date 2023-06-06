@@ -12,7 +12,7 @@ export default function page({movie}) {
       alt={movie.title}
       />
         <h2 className="font-bold text-4xl">{movie.original_title}</h2>
-        <h3 className="text-zinc-400 text-lg">Genre: {movie.genres[0].name}</h3>
+        <h3 className="text-zinc-400 text-lg">Genre: {movie.genres[1].name}</h3>
         <p>{movie.overview}</p>
         <span>Popularity: {String(movie.popularity).slice(0,4)}</span>
       </>
