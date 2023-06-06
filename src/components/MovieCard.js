@@ -18,6 +18,7 @@ export default function MovieCard({movies}) {
               className="w-[230px] h-[300px] scale-100 object-fill group-hover:scale-105 duration-500 "
               src={`${path}${mov.poster_path}`}
               onLoad={()=>setLoading(true)}
+              alt="photo"
               />
               {!loading && <h2 className="text-4xl">loading...</h2>}
           </div>
