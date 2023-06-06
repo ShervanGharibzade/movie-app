@@ -8,7 +8,7 @@ export async function generateStaticParams() {
     const movies = await getPopularMoveis();
 
     return movies?.results?.map(mov => ({
-        userId: mov?.id.toString()
+        userId: mov?.id?.replace(".txt","")
     }))
     
 }
