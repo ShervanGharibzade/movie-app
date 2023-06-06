@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Nav() {
   const [name, setName] = useState('');
   
-  const searchChange = async(e) =>{
+  const searchChange = (e) =>{
     const movieName = e.target.value
     if(movieName !==""){
       setName(movieName)
