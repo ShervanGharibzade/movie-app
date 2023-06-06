@@ -8,13 +8,13 @@ export async function generateStaticParams() {
     const movies = await getPopularMoveis();
 
     return movies?.results?.map(mov => ({
-        userId: mov?.id?.replace(".txt","")
+        userId: mov?.id
     }))
     
 }
 
 export default async function page({params:{id}}) {
-    let userId = id
+    let userId = id.replace(".txt","")
     const movieDetails = await getMovie(userId)
   return (
     <div className='py-4'>
