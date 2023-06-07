@@ -1,6 +1,5 @@
 import Link from "next/link";
 import searchMovie from "../../../../lib/searchMovie";
-import MovieTarget from "./components/MovieTarget";
 
 export default async function page({params:{name}}) {
 
@@ -35,14 +34,15 @@ export default async function page({params:{name}}) {
     return (
       <div className="text-white my-6 items-center text-center w-full">
         <div className="w-full gap-5 items-center py-4">
-          <button className="bg-blue-600 my-4 w-20 h-20 fixed right-20 bottom-20 animate-bounce font-semibold rounded-full hover:ring-4 hover:bg-blue-800 duration-200 ring-blue-400">
-            <Link href={"/"}>Back to Home</Link>
-          </button>
+            <Link href={"/"}>
+              <button className="bg-blue-600 my-4 w-20 h-20 fixed right-20 bottom-20 animate-bounce font-semibold rounded-full hover:ring-4 hover:bg-blue-800 duration-200 ring-blue-400">
+              Back to Home
+              </button>
+            </Link>
           <h2 className="font-semibold text-3xl">Results for : {movieName}
           </h2>
         </div>
         <div className="grid text-center gap-10 min-h-[83.5vh] grid-cols-4 w-fit mx-auto">
-          {/* <MovieTarget movie={movie}/> */}
           {content}
         </div>
       </div>

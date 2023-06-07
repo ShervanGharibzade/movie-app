@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function page({movie}) {
   const path = "https://image.tmdb.org/t/p/original";
-  
+    
     const content =(
       <>
       <img
@@ -21,9 +21,11 @@ export default function page({movie}) {
   return (
     
     <div className="text-white flex flex-col w-2/3 mx-auto text-center justify-center items-center">
-      <button className="bg-blue-600 my-4 w-20 h-20 fixed right-20 bottom-20 animate-bounce font-semibold rounded-full hover:ring-4 hover:bg-blue-800 duration-200 ring-blue-400">
-            <Link href={"/"}>Home</Link>
-      </button>
+            <Link href={"/"}>
+              <button className="bg-blue-600 my-4 w-20 h-20 fixed right-20 bottom-20 animate-bounce font-semibold rounded-full hover:ring-4 hover:bg-blue-800 duration-200 ring-blue-400">
+                Home
+              </button>
+              </Link>
       {content}
     </div>
   )

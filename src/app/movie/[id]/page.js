@@ -1,25 +1,12 @@
+
 import getMovie from '../../../../lib/getMovie';
-import getPopularMoveis from '../../../../lib/getPopularMoveis';
 import MovieDetail from './components/MovieDetail';
-
-
-export async function generateStaticParams() {
-
-    const movies = await getPopularMoveis();
-
-    return movies?.results?.map(mov => ({
-        userId: mov?.id?.toString()
-    }))
-    
-}
-
-export default async function page({params:{id}}) {
-    let userId = id
-    const movieDetails = await getMovie(String(userId))
-  return (
-    <div className='py-4'>
+export default async function page(props) {
+    const id = props.params.id
+    const movieDetails = await getMovie(id)
+    return (
+        <div className='py-4 text-white'>
         <MovieDetail movie={movieDetails}/>
-    </div>
+        </div>
     )
 }
-
