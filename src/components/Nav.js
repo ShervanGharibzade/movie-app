@@ -7,7 +7,7 @@ export default function Nav() {
   const [name, setName] = useState('');
   
   const searchChange = (e) =>{
-    const movieName = e.target.value
+    const movieName = e.target.value.toString()
     if(movieName !==""){
       setName(movieName)
     }
