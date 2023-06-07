@@ -5,8 +5,12 @@ import { Suspense } from 'react';
 
 
 export default async function page({params:{id}}) {
-    const movieDetails = await getMovie(id)
-    console.log(id,'mooooooooooooovi')
+    const movieId = id
+    let movieDetails;
+    if(movieId) movieDetails = await getMovie(id);
+    
+    
+    console.log(movieId,'mooooooooooooovi')
     return (
         <div className='py-4 text-white'>
             <Suspense fallback={<h2>loading ...</h2>}>

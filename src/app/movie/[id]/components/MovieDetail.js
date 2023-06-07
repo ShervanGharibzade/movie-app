@@ -14,7 +14,7 @@ export default function page({movie}) {
                 Home
               </button>
               </Link>
-              <img
+      <img
       className="rounded-xl w-[400px] my-5"
       src={`${path}${movie.poster_path}`}
       alt={movie.title}
