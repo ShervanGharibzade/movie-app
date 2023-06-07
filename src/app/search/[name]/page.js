@@ -4,7 +4,7 @@ import searchMovie from "../../../../lib/searchMovie";
 export default async function page({params:{name}}) {
 
   const path = "https://image.tmdb.org/t/p/original"
-    let movieName = name.trim().replace(" ","%20").toString();
+    let movieName = name.toString();
     let movie;
     if(Boolean(String(movieName))){
        movie = await searchMovie(movieName);
