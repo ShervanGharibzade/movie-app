@@ -26,7 +26,7 @@ export default function Nav() {
               placeholder="Search movie..."
               />
                 { name 
-                ? <Link href={`/search/${name.toString()}`}>
+                ? <Link href={'/search/[name]'} as={`/search/${name.toString()}`}>
                   <button 
                   className="bg-blue-600 text-white w-10 h-10 rounded-full hover:bg-blue-700 hover:ring-2 ring-blue-400 duration-200"
                   type="submit"
