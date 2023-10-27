@@ -10,6 +10,7 @@ export default async function page({ params: { name } }) {
   }
   let content;
   if (movie.total_results !== 0) {
+    console.log(movie, name);
     content = movie?.results?.map((mov) => (
       <div key={mov.id} className="w-[300px] mx-auto">
         <div className="group rounded-xl w-[300px] h-[400px] overflow-hidden">
@@ -22,7 +23,9 @@ export default async function page({ params: { name } }) {
         <p className="text-sm py-3">{mov.overview.slice(0, 150)}...</p>
         <h2 className="text-zinc-400 text-sm italic">
           Release: {mov.release_date}
-          <span className="pl-5">popularity: {mov.popularity}</span>
+          <span className="pl-5">
+            popularity: {mov?.vote_average.toFixed(1)}
+          </span>
         </h2>
       </div>
     ));
