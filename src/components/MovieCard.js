@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function MovieCard({ mov }) {
@@ -8,7 +9,7 @@ export default function MovieCard({ mov }) {
       <Link href={`/movie/${mov.id}`}>
         <div className="w-fit relative border-2 border-white/50 rounded-lg">
           <div className="w-[230px] h-[300px] relative rounded-md drop-shadow-4xl cursor-pointer group overflow-hidden">
-            <img
+            <Image
               className="w-[230px] h-[300px] scale-100 object-fill group-hover:scale-105 duration-500 "
               src={`${path}${mov.poster_path}`}
               alt="photo"
