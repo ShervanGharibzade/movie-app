@@ -1,5 +1,6 @@
 import Link from "next/link";
 import searchMovie from "../../../../lib/searchMovie";
+import Image from "next/image";
 
 export default async function page({ params: { name } }) {
   const path = "https://image.tmdb.org/t/p/original";
@@ -14,7 +15,7 @@ export default async function page({ params: { name } }) {
     content = movie?.results?.map((mov) => (
       <div key={mov.id} className="w-[300px] mx-auto">
         <div className="group rounded-xl w-[300px] h-[400px] overflow-hidden">
-          <img
+          <Image
             className="w-[300px] h-[400px] scale-100 object-fill group-hover:scale-105 duration-500"
             src={`${path}${mov.poster_path}`}
             alt={mov.title}

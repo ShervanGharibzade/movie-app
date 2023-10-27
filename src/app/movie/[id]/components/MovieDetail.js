@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function page({ movie }) {
@@ -10,7 +11,7 @@ export default function page({ movie }) {
           Home
         </button>
       </Link>
-      <img
+      <Image
         className="rounded-xl w-[400px] my-5"
         src={`${path}${movie.poster_path}`}
         alt={movie.title}

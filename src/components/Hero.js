@@ -8,13 +8,14 @@ import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero({ movies }) {
   const path = "https://image.tmdb.org/t/p/w1280";
 
   const backgroundBluer = movies?.map((mov) => (
     <SwiperSlide key={mov.id} className="w-fit blur-lg">
-      <img
+      <Image
         src={`${path}${mov.backdrop_path}`}
         alt={mov.title}
         className="rounded-2xl w-[1000px] h-[550px]"
@@ -27,7 +28,7 @@ export default function Hero({ movies }) {
   const content = movies?.map((mov) => (
     <SwiperSlide key={mov.id} className="w-fit">
       <Link href={`/movie/${mov.id}`}>
-        <img
+        <Image
           src={`${path}${mov.backdrop_path}`}
           alt={mov.title}
           className="rounded-2xl w-[1000px] h-[550px]"
