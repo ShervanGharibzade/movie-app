@@ -1,16 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 export default function Searchbar() {
   const [searchValue, setSearchValue] = useState("");
   const [show, setShow] = useState(false);
+  const router = useRouter();
 
   const handleChange = (e: any) => {
     e.preventDefault();
     const { value } = e.target;
-    setSearchValue(value);
+    setSearchValue(value.trim());
+  };
+
+  const handleKeyPress = (e: any) => {
+    e.preventDefault();
+    console.log(e.key);
+
+    if (e.key === "Enter" && searchValue !== "") {
+      router.push(`/search/${searchValue}`);
+    }
   };
 
   return (
@@ -32,6 +43,7 @@ export default function Searchbar() {
             transition: "opacity  ease-in-out .5s",
           }}
           type="text"
+          onKeyUp={handleKeyPress}
           onChange={handleChange}
           value={searchValue}
           placeholder="Search a movie .."

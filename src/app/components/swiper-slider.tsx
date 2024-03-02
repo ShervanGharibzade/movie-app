@@ -18,6 +18,7 @@ const MySwiperComponent = ({ path, movies }: any) => {
       spaceBetween={50}
       slidesPerView={1}
       navigation
+      style={{ overflow: "visible" }}
       modules={[Pagination, Navigation]}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}>
@@ -29,7 +30,7 @@ const MySwiperComponent = ({ path, movies }: any) => {
                 loading="lazy"
                 width={1000}
                 height={200}
-                className="absolute top-0 blur-2xl"
+                className="absolute top-0 blur-2xl animate-pulse"
                 src={`${path}${mov?.backdrop_path}`}
                 alt="movie cover"
               />

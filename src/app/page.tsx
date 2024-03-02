@@ -10,7 +10,7 @@ export default async function Home() {
 
   const movies = results.map((mov: any) => mov);
   return (
-    <section>
+    <section className="overflow-hidden">
       <Searchbar />
       <HomeHeader movies={movies} path={path} />
       <Gallery movies={movies} path={path} />
