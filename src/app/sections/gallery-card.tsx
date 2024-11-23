@@ -10,12 +10,13 @@ export default function GalleryCard({ movies, path }: any) {
             <Link
               href={`/movie/${mov?.id}`}
               key={mov?.id}
-              className="relative w-fit group">
+              className="relative w-fit group"
+            >
               <Image
                 loading="lazy"
                 width={200}
                 height={100}
-                className=" rounded-lg duration-200 cursor-pointer"
+                className="rounded-lg duration-200 cursor-pointer"
                 src={`${path}${mov?.poster_path}`}
                 alt="movie cover"
               />

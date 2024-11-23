@@ -11,6 +11,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import Image from "next/image";
+import styles from "./style.module.css";
 
 const MySwiperComponent = ({ path, movies }: any) => {
   return (
@@ -21,7 +22,8 @@ const MySwiperComponent = ({ path, movies }: any) => {
       style={{ overflow: "visible" }}
       modules={[Pagination, Navigation]}
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}>
+      scrollbar={{ draggable: true }}
+    >
       {movies.map((mov: any) => (
         <SwiperSlide key={mov.id}>
           <div className="w-fit mx-auto">
@@ -30,7 +32,7 @@ const MySwiperComponent = ({ path, movies }: any) => {
                 loading="lazy"
                 width={1000}
                 height={200}
-                className="absolute top-0 blur-2xl animate-pulse"
+                className={`absolute top-0 blur-2xl scale-110 ${styles.animationSlider}`}
                 src={`${path}${mov?.backdrop_path}`}
                 alt="movie cover"
               />

@@ -1,0 +1,19 @@
+.animationSlider {
+  opacity: 0.5;
+  animation: fadePage infinite 5s ease-in-out;
+}
+
+@keyframes fadePage {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  85% {
+    opacity: 1;
+  }
+}
